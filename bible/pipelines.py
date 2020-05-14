@@ -16,7 +16,7 @@ class BiblePipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        file = open("data/"+"spider.bible_id"+".json", 'w+b')
+        file = open(f"bible/data/{spider.bible_id}-{spider.name}.json", 'w+b')
         self.files[spider] = file
         self.exporter = JsonItemExporter(file)
         self.exporter.start_exporting()
